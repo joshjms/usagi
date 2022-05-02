@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="with=device-width,initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://use.fontawesome.com/05f9009fe4.js"></script>
+</head>
+
+<body>
+    <navbar class="nav">
+        <h1><a href="#">兎</a></h1>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'mangalib:home' %}">Home</a></li>
+                <li><a href="{% url 'mangalib:gimme' %}">Gimme</a></li>
+                <li><a href="{% url 'mangalib:login' %}"> Login </a></li>
+                <li><a href="{% url 'mangalib:register' %}"> Register </a></li>
+            </ul>
+        </div>
+    </navbar>
+
+    <section class = "form">
+        <form method = "post">
+            {% csrf_token %}
+            <label for = "username">Username</label>
+            <input type = "text" placeholder = "Enter your username" name = "username" required>
+            <label for = "password">Password</label>
+            <input type = "password" placeholder = "Enter your password" name = "password" required>
+            {{ message }}
+            <button type = "submit">Login</button>
+        </form>
+    </section>
+</body>
+
+</html>

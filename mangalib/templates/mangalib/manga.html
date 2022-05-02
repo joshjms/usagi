@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{manga.title}}</title>
+    <meta name="viewport" content="with=device-width,initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://use.fontawesome.com/05f9009fe4.js"></script>
+</head>
+
+<body>
+    <navbar class="nav">
+        <h1><a href="#">兎</a></h1>
+        <div class="nav-links">
+            <ul>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'mangalib:home' %}">Home</a></li>
+                <li><a href="{% url 'mangalib:add' %}">Add</a></li>
+                <li><a href="{% url 'mangalib:gimme' %}">Gimme</a></li>
+                <li><a href="{% url 'mangalib:logout' %}"> Logout </a></li>
+                <li><a href="#">{{user.username}} </a></li>
+                {% else %}
+                <li><a href="{% url 'mangalib:home' %}">Home</a></li>
+                <li><a href="{% url 'mangalib:gimme' %}">Gimme</a></li>
+                <li><a href="{% url 'mangalib:login' %}"> Login </a></li>
+                <li><a href="{% url 'mangalib:register' %}"> Register </a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </navbar>
+    
+    <div class = "manga-display">
+        <div class="cover-img" style="background-image:linear-gradient(rgba(4,9,30,0.2), rgba(4,9,30,0.5)), url(
+            {{manga.cover}});">
+        </div>
+        <div class = "manga-details">
+            <h3> <a href = "{{manga.url}}" style = "color:white; text-decoration: none;"> {{manga.title}} </a> </h3>
+            <p> {{manga.synopsis}} </p>
+            {% if user.is_authenticated %}
+                {% if not saved %}
+                <a href = "{% url 'mangalib:save' manga.id %}"> <button style = "border-radius: 2px;"> Save </button> </a>
+                {% else %}
+                <a href = "#" disabled> <button style = "background-color:green; border-radius: 2px;"> Saved </button> </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
