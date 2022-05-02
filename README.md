@@ -1,5 +1,5 @@
 # Usagi
-> A personalized manga library
+> Combining a manga library and a manga gacha system
 
 ### Library
 Stores all your saved manga in a neat organization.
@@ -21,4 +21,10 @@ Gives you a random manga based on your selection of genre and tags. You will be 
 
 ![image](https://user-images.githubusercontent.com/83194022/166289913-29e5faaa-cb7a-433e-af8e-2f7605436657.png)
 ![image](https://user-images.githubusercontent.com/83194022/166289965-4de77cb5-f60c-4255-948c-2b6f666c0786.png)
+![image](https://user-images.githubusercontent.com/83194022/166291841-87439e37-dc53-4c42-b1d4-c0dd210a84b1.png)
 
+### Afterwords
+I probably want to make a blog system so that recommending manga is possible especially those that are less popular and only appeared thanks to RNG (*coughs* oneshots).
+
+> "My first-ish project is finally going to be over??? Finally I can sleep again!!!"
+> ~ joshjms, 2022
