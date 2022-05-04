@@ -1,5 +1,5 @@
 # Usagi
-> Combining a manga library and a manga gacha system
+> Combining a manga library and a gacha system
 
 ### Library
 Stores all your saved manga in a neat organization.
